@@ -1016,6 +1016,8 @@ void EnigmaIOTNodeClass::handle () {
 			ESP.deepSleep (sleep_t);
 #elif defined ESP32
 			esp_deep_sleep (sleep_t);
+			delay(100);
+			ESP.restart(); // Restart Node if sleep fails
 #endif
 		}
 	}
